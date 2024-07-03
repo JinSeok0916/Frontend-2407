@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        th, td {padding: 10px;}
+    </style>
+</head>
+<body style="margin: 50px;">
+    <form action="#" method="post">
+        <table border="1" style="width: 40%;">
+            <thead>
+                <tr>
+                    <th colspan="2">회원가입</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="username" style="width: 40%;">사용자 ID</label></td>
+                    <td><input type="text" name="username" id="username" required autofocus></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">패스워드</label></td>
+                    <td><input type="text" name="pwd" id="pwd" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">패스워드 확인</label></td>
+                    <td><input type="text" name="password" id="password" required></td>
+                </tr>
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input type="text" name="name" id="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">성별</label></td>
+                    <td>
+                    <input type="radio" name="gender" id="man" value="Man" required>
+                    <label for="man">남</label>
+                    <input type="radio" name="gender" id="woman" value="Woman" required>
+                    <label for="woman">여</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">이메일</label></td>
+                    <td><input type="text" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phonenumber">전화번호</label></td>
+                    <td><input type="text" name="phonenumber" id="phonenumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="intro">자기소개</label></td>
+                    <td><textarea name="intro" id="intro" cols="30" rows="10"></textarea></td>
+                </tr>
+            </tbody>
+        </table><br>
+        <input type="submit" value="제출">
+        <input type="reset" value="취소">
+    </form>
+</body>
+</html>
