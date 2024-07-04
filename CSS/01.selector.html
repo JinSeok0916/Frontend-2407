@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>  /* a, b = a 또는 b   a b = b는 a의 자손(모든 항목)   a > b = b는 a의 자식(첫번째 항목) */
+        p, h1, h2 {text-align: center; color: red;}      /* 태그 */
+        .center {text-align: center; color: red;}       /* .calss */
+        #para1 {text-align: center; color: red;}        /* #id */
+        * {font-family: D2coding;}                      /* * = 모든 경우 */
+        div > p {text-align: center; color: blue;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <p>Red and center-aligned paragraph.</p>
+    <p class="center">Red and center-aligned paragraph.</p>
+    <p id="para1">Red and center-aligned paragraph.</p>
+    <h1>Red and center-aligned paragraph.</h1>
+    <h2>Red and center-aligned paragraph.</h2>
+    <div>
+        <p>Blue and center-aligned paragraph.</p>       <!-- div의 자식 -->
+        <section>
+            <p>Red and center-aligned paragraph.</p>    <!-- div의 자손, section의 자식 -->
+        </section>
+    </div>
+</body>
+</html>
