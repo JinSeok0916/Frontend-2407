@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alighn</title>
+    <style>
+        .center {margin: auto; width: 50%; border: 3px solid green; padding: 10px;}
+        .image {display: block; margin: auto;}
+    </style>    <!-- img태그는 inline태그라서 margin이 안되므로 block태그로 변경 후 margin: auto -->
+</head>
+<body style="margin: 40px;">
+    <h2>Align</h2>
+    <div class="center" style="margin-bottom: 30px;">
+        This div element is centered.
+    </div>
+    <span class="center">
+        This div element is not centered. margin: auto는 bolck tag에만 적용됨.
+    </span>
+    <div style="text-align: center; margin-top: 30px;">
+        <span>This span element is centered.</span>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="https://picsum.photos/300/200?q=1" alt="">
+    </div>
+    <img src="https://picsum.photos/300/200?q=2" alt="" class="image">
+</body>
+</html>
