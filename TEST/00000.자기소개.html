@@ -5,27 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자기소개</title>
     <style>
-        body {background-color: #fcfcfc;}
-        div.intro {position: sticky; top: 10px; background-color: bisque; padding: 40px;
+        body {background-color: floralwhite ;}
+        div.intro {background-color: bisque; padding: 40px;
         text-align: center; font-size: 50px; margin-bottom: 50px;}
-        ol {font-size: 20px; margin-left: 40px; margin-bottom: 100px;}
-        li {font-size: 20px;}
+        ol {font-size: 20px; margin: 100px 40px;}
+        li {font-size: 25px; margin: 10px;}
+        p {font-size: 20px; margin-right: 50px;}
+        a {text-decoration: none;}
+        a.info:link {color: black;}
+        a.info:visited {color: gray;}
+        a.info:hover {color: blue;}
+        a.info:active {color: brown;}
+        a.intro {color: green;}
     </style>
 </head>
 <body>
-    <div class="intro">
+    <div class="intro" id="intro">
         <b>자기소개</b>
     </div>
-    <ol>
-        <li><b>내가 태어난 곳</b></li>
-        <p>경기도 수원</p>
-        <li><b>내가 가봤던 곳 또는 가보고 싶은 곳</b></li>
-        <p>인천 영종도</p>
-        <li><b>내가 좋아하는 음식</b></li>
-        <p>김치찌개</p>
-        <li><b>내가 좋아하는 것(취미)</b></li>
-        <p>게임</p>
-    </ol>
-    <h1>자기소개</h1>
+    <nav>
+        <ul>
+            <li><a class="info" href="#birth">내가 태어난 곳</a></li>
+            <li><a class="info" href="#place">내가 가봤던 곳 또는 가보고 싶은 곳</a></li>
+            <li><a class="info" href="#food">내가 좋아하는 음식</a></li>
+            <li><a class="info" href="#hobby">내가 좋아하는 것(취미)</a></li>
+        </ul>
+        <ol style="width: 90%;">
+            <li id="birth"><b>내가 태어난 곳</b></li>
+            <p>
+                제가 태어난 곳은 경기도 수원시의 한 산부인과입니다.
+            </p>
+            <div style="text-align: right; margin-right: 40px;">
+                <a class="intro" href="#intro">처음으로</a>
+            </div>
+            <br><br>
+            <li id="place"><b>내가 가봤던 곳 또는 가보고 싶은 곳</b></li>
+            <p>
+                가봤던 곳 그리고 가고 싶은 곳은 인천 영종도입니다.
+                처음 영종도를 알게된 계기는 군대에서 자대배치를 받았을 때 였습니다.
+                그 전에는 어렴풋이 인천공항이 있던 곳으로만 알고 있었는데
+                영종도라는 섬을 직접 두 눈으로 보고 느끼게 된 건 태어난 지 21년이 지난 후 였습니다.
+                육지랑 꽤나 먼 거리가 떨어진 섬이라는 걸 몸으로도 느낄 수 있을 정도로
+                사면이 바다로 둘러쌓여있다보니 해풍이 많이도 불어 여름엔 습하고 겨울엔 추웠습니다만
+                막상 군대에서 바라본 시선이 아니라 전역을 하고 난 뒤 민간인의 시선에서는
+                눈을 어디에 둬도 바다로 가득차게되는 갇혀있지 않고 트여있는
+                보는 사람의 마음이 편안해지는 곳이라고 느껴지기 때문입니다.
+            </p>
+            <div style="text-align: right; margin-right: 40px;">
+                <a class="intro" href="#intro">처음으로</a>
+            </div>
+            <br><br>
+            <li id="food"><b>내가 좋아하는 음식</b></li>
+            <p>
+                매일 먹다보면 질리고 쳐다보기도 싫을 때가 있지만
+                막상 며칠 지나고보면 다시 생각나는 음식인 김치찌개가 제가 제일 좋아하는 음식입니다.
+                어렸을 때 부터 저희 어머니가 해주셨을 때도, 제가 직접 끓였을 때도, 밖에서 사먹을 때도
+                개인적인 만족감이 높은 음식이다보니 어느 순간 저만의 소울푸드로 자리를 잡았습니다.
+            </p>
+            <div style="text-align: right; margin-right: 40px;">
+                <a class="intro" href="#intro">처음으로</a>
+            </div>
+            <br><br>
+            <li id="hobby"><b>내가 좋아하는 것(취미)</b></li>
+            <p>
+                남자 아이나 성인 남성에게는 가장 흔한 취미인 게임입니다.
+                미취학 아동일 때 부터 접했었던 컴퓨터이자 게임이다 보니
+                그때도 지금도 그리고 더 나이를 먹은 뒤에도 평생의 취미로 함께하지 않을까 싶습니다.
+            </p>
+            <div style="text-align: right; margin-right: 40px;">
+                <a class="intro" href="#intro">처음으로</a>
+            </div>
+        </ol>
+    </nav>
 </body>
 </html>
