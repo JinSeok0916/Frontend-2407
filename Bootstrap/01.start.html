@@ -8,26 +8,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+          <!-- container-fluid > 여백없이 전체 -->  <!-- bg > 백그라운드 primary > 색 -->
 <div class="container-fluid p-5 bg-primary text-white text-center">
   <h1>My First Bootstrap Page</h1>
   <p>Resize this responsive page to see the effect!</p> 
 </div>
-  
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
+      <!-- container > 여백이 있는 네모 -->
+<div class="container mt-5">  <!-- mt > margin-top -->
+  <div class="row"> <!-- sm,md,lg-n은 12/n가 값이 됨. ex) sm-6 = small 일 때 2개 -->
+    <div class="col-sm-6 col-md-4 col-lg-3">         <!-- md-4 = middle 일 때 3개 -->
+      <h3>Column 1</h3>                              <!-- lg-3 = large 일 때 4개 -->
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
+    </div>      <!-- col-4 = 데스크탑(디폴트) 기준 3개 -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <h3>Column 2</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <h3>Column 4</h3>        
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
