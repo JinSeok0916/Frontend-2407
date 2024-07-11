@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/66b51397af.js" crossorigin="anonymous"></script>
+  <style>
+    * {font-family: 'Noto Sans KR', sans-serif;}
+    a {text-decoration: none;}
+    th.sunday {color: red;}
+    td.sunday {color: red;}
+    th.saturday {color: blue;}
+    td.saturday {color: blue;}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">           <!-- sticky = fixed-top -->
+      <ul class="navbar-nav">
+        <a class="navbar-brand mx-5" href="#">
+          <img src="img/KakaoTalk_20240709_135607705.png" alt="Logo" style="height: 36px;">
+        </a>
+        <li class="nav-item ms-3">
+          <a class="nav-link active" href="#"><i class="fa-solid fa-table-list me-1"></i>게시판</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="#"><i class="fa-solid fa-user-group me-1"></i>사용자</a>
+        </li>
+        <li class="nav-item dropdown ms-3">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-brain me-1"></i>인공지능
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Link 1</a></li>
+            <li><a class="dropdown-item" href="#">Link 2</a></li>
+            <li><hr class="dropdown-divider" href="#"></hr></li>
+            <li><a class="dropdown-item" href="#">Link 3</a></li>
+          </ul>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="#"><i class="fa-solid fa-user-tie"></i> 관리자</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> 로그아웃</a>
+        </li>
+      </ul>
+      <span class="navbar-text me-3">홍길동님 환영합니다.</span>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 80px;">
+    <div class="row" style="height: 1500px;">
+      <div class="col-3">
+        <img class="rounded-circle" src="../HTML/img/cat.jfif" alt="프로필" style="width: 90%;">
+        <div class="mt-2" style="font-size: 0.9rem;">
+          <span>오늘의 상태 메세지를 이 자리에 적습니다.</span>
+          <a href="#"><span class="badge bg-secondary">수정</span></a>
+        </div>
+        <div class="mt-5">
+          <i class="fa-solid fa-envelope"></i> gkgjfj@naver.com<br>
+          <a href="https://github.com/JinSeok0916" target="_blank">
+          <i class="fa-brands fa-github"></i> JinSeok0916</a><br>
+          <i class="fa-solid fa-location-dot"></i> 수원시 영통구
+          <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%98%81%ED%86%B5%EA%B5%AC%EB%82%A0%EC%94%A8">
+            <span class="badge bg-secondary">날씨</span></a><br>
+          <button type="button" class="btn btn-outline-secondary btn-sm mt-2">Edit Profile</button>
+        </div>
+      </div>
+
+      <!-- Main 영역: 페이지마다 이 부분만 채우면 됨. -->
+      <div class="col-9">
+        <h3><strong>스케줄</strong></h3>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <div><input type="date" class="form-control" value="2024-07-10"></div>
+          <div><b>&lt;&lt; &lt; 2024.07 &gt; &gt;&gt;</b></div>
+          <div><button type="button" class="btn btn-outline-secondary">기념일 추가</button></div>
+        </div><br>
+        <table class="table table-bordered bg-danger" style="height: 40%;">
+          <tr style="text-align: center; height: 7%;" class="table-primary">
+            <th class="sunday">일</th>
+            <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
+            <th class="saturday">토</th>
+          </tr>
+          <tr>
+            <td style="color: rgba(255, 0, 0, 0.3);">30</td>
+            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+            <td class="saturday">6</td>
+          </tr>
+          <tr>
+            <td class="sunday">7</td>
+            <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+            <td class="saturday">13</td>
+          </tr>
+          <tr>
+            <td class="sunday">14</td>
+            <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+            <td class="saturday">20</td>
+          </tr>
+          <tr>
+            <td class="sunday">21</td>
+            <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+            <td class="saturday">27</td>
+          </tr>
+          <tr>
+            <td class="sunday">28</td>
+            <td>29</td><td>30</td><td>31</td>
+            <td style="color: rgba(0, 0, 0, 0.3);">1</td>
+            <td style="color: rgba(0, 0, 0, 0.3);">2</td>
+            <td style="color: rgba(0, 0, 255, 0.3);">3</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+    <div class="container-fluid justify-content-center">
+      <span class="navbar-text">
+        Copyright &copy; 2021-2024 CK World Corp. All right reserved.
+      </span>
+    </div>
+  </nav>
+
+</body>
+</html>
