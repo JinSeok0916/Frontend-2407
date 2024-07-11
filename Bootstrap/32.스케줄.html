@@ -13,7 +13,7 @@
     a {text-decoration: none; color: inherit;}
   </style>
 </head>
-<body>
+<body>        <!-- 띄어쓰기 = &nbsp; -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container-fluid">           <!-- sticky = fixed-top -->
       <ul class="navbar-nav">
@@ -333,23 +333,24 @@
         </div>
   
         <div class="modal-body">
-          <form action="#" method="get">
+          <form action="/schedule" method="get">
 
             <div class="my-3">
-              <label for="title" class="form-label">제목</label>
+              <label for="title" class="form-label">일정명</label>
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input ms-3" name="remember"> 중요
+                <input type="checkbox" class="form-check-input ms-3" name="remember"> &nbsp;중요
               </label>
               <input type="text" class="form-control" name="title" id="title" placeholder="일정" required>
             </div>
 
             <div class="my-3">
               <div class="row">
-                <h6>시작일</h6>
                 <div class="col-8">
+                  <label for="sdate" class="form-label">시작일</label>
                   <input type="date" class="form-control" value="2024-07-11">
                 </div>
                 <div class="col-4">
+                  <label for="stime" class="form-label">시작시간</label>
                   <input type="time" class="form-control" value="09:00">
                 </div>
               </div>
@@ -357,11 +358,12 @@
 
             <div class="my-3">
               <div class="row">
-                <h6>종료일</h6>
                 <div class="col-8">
+                  <label for="edate" class="form-label">종료일</label>
                   <input type="date" class="form-control" value="2024-07-11">
                 </div>
                 <div class="col-4">
+                  <label for="etime" class="form-label">종료시간</label>
                   <input type="time" class="form-control" value="13:00">
                 </div>
               </div>
