@@ -11,10 +11,6 @@
   <style>
     * {font-family: 'Noto Sans KR', sans-serif;}
     a {text-decoration: none;}
-    th.sunday {color: red;}
-    td.sunday {color: red;}
-    th.saturday {color: blue;}
-    td.saturday {color: blue;}
   </style>
 </head>
 <body>
@@ -25,7 +21,7 @@
           <img src="img/KakaoTalk_20240709_135607705.png" alt="Logo" style="height: 36px;">
         </a>
         <li class="nav-item ms-3">
-          <a class="nav-link active" href="#"><i class="fa-solid fa-table-list me-1"></i>게시판</a>
+          <a class="nav-link" href="#"><i class="fa-solid fa-table-list me-1"></i>게시판</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" href="#"><i class="fa-solid fa-user-group me-1"></i>사용자</a>
@@ -40,6 +36,9 @@
             <li><hr class="dropdown-divider" href="#"></hr></li>
             <li><a class="dropdown-item" href="#">Link 3</a></li>
           </ul>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link active" href="#"><i class="fa-solid fa-calendar-days"></i> 스케줄</a>
         </li>
         <li class="nav-item ms-3">
           <a class="nav-link" href="#"><i class="fa-solid fa-user-tie"></i> 관리자</a>
@@ -76,42 +75,48 @@
         <h3><strong>스케줄</strong></h3>
         <hr>
         <div class="d-flex justify-content-between">
-          <div><input type="date" class="form-control" value="2024-07-10"></div>
+          <div><input type="date" class="form-control" value="2024-07-11"></div>
           <div><b>&lt;&lt; &lt; 2024.07 &gt; &gt;&gt;</b></div>
-          <div><button type="button" class="btn btn-outline-secondary">기념일 추가</button></div>
+
+          <div>
+            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal">
+            일정 추가
+            </button>
+          </div>
+
         </div><br>
         <table class="table table-bordered bg-danger" style="height: 40%;">
           <tr style="text-align: center; height: 7%;" class="table-primary">
-            <th class="sunday">일</th>
+            <th><span class="text-danger">일</span></th>
             <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
-            <th class="saturday">토</th>
+            <th class="text-primary">토</th>
           </tr>
           <tr>
-            <td style="color: rgba(255, 0, 0, 0.3);">30</td>
+            <td><span class="text-danger" style="opacity: 0.5;">30</span></td>
             <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-            <td class="saturday">6</td>
+            <td><span class="text-primary">6</span></td>
           </tr>
           <tr>
-            <td class="sunday">7</td>
+            <td class="text-danger">7</td>
             <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
-            <td class="saturday">13</td>
+            <td class="text-primary">13</td>
           </tr>
           <tr>
-            <td class="sunday">14</td>
+            <td class="text-danger">14</td>
             <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
-            <td class="saturday">20</td>
+            <td class="text-primary">20</td>
           </tr>
           <tr>
-            <td class="sunday">21</td>
+            <td class="text-danger">21</td>
             <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
-            <td class="saturday">27</td>
+            <td class="text-primary">27</td>
           </tr>
           <tr>
-            <td class="sunday">28</td>
+            <td class="text-danger">28</td>
             <td>29</td><td>30</td><td>31</td>
-            <td style="color: rgba(0, 0, 0, 0.3);">1</td>
-            <td style="color: rgba(0, 0, 0, 0.3);">2</td>
-            <td style="color: rgba(0, 0, 255, 0.3);">3</td>
+            <td><span style="opacity: 0.5;">1</span></td>
+            <td><span style="opacity: 0.5;">2</span></td>
+            <td><span class="text-primary" style="opacity: 0.5;">3</span></td>
           </tr>
         </table>
       </div>
@@ -127,5 +132,70 @@
     </div>
   </nav>
 
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h4 class="modal-title">일정 추가</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+          <form action="#" method="get">
+
+            <div class="my-3">
+              <label for="title" class="form-label">제목</label>
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input ms-3" name="remember"> 중요
+              </label>
+              <input type="text" class="form-control" name="title" id="title" placeholder="일정" required>
+            </div>
+
+            <div class="my-3">
+              <div class="row">
+                <h6>시작일</h6>
+                <div class="col-8">
+                  <input type="date" class="form-control" value="2024-07-11">
+                </div>
+                <div class="col-4">
+                  <input type="time" class="form-control" value="09:00">
+                </div>
+              </div>
+            </div>
+
+            <div class="my-3">
+              <div class="row">
+                <h6>종료일</h6>
+                <div class="col-8">
+                  <input type="date" class="form-control" value="2024-07-11">
+                </div>
+                <div class="col-4">
+                  <input type="time" class="form-control" value="13:00">
+                </div>
+              </div>
+            </div>
+
+            <div class="my-3">
+              <label for="place" class="form-label">장소</label>
+              <input type="text" class="form-control" name="place" id="place" placeholder="장소" required>
+            </div>
+
+            <div class="my-3">
+              <label for="memo" class="form-label">메모</label>
+              <input type="text" class="form-control" name="memo" id="memo" placeholder="메모">
+            </div>
+            
+            <div class="d-flex justify-content-end mb-3">
+              <button type="submit" class="btn btn-primary">제출</button>
+              <button type="end" class="btn btn-secondary mx-2">종료</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
