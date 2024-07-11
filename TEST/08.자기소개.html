@@ -5,25 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/66b51397af.js" crossorigin="anonymous"></script>
   <style>
+    * {font-family: 'Noto Sans KR', sans-serif;}
     a {text-decoration: none;}
     a.info:link {color: black;}
     a.info:visited {color: gray;}
     a.info:hover {color: blue;}
     a.info:active {color: brown;}
-    .row {font-size: 20px;}
+    .info {font-size: 20px;}
+    p {font-size: 20px;}
   </style>
 </head>
 <body>
-  <div class="container-fluid p-5 bg-primary text-white text-center" id="intro">
+  <div class="container-fluid p-4 bg-primary text-white text-center" id="intro">
     <h1>자기소개</h1>
   </div>
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col-3">
+      <div class="col-2">
         <ul class="nav flex-column">
           <a class="info" href="#birth"><li>Birth</li></a>
           <a class="info" href="#place"><li>Place</li></a>
@@ -31,19 +34,25 @@
           <a class="info" href="#hobby"><li>Hobby</li></a>
         </ul>
       </div>
-      <div class="col-9">
-        <ol>
-          <li id="birth"><p>내가 태어난 곳</p>
-            <img style="width: 30%; float: top;" src="https://i.namu.wiki/i/6Rr4wTa2roglkQf_z3gx07O-O97-yG1i5rsjDyVu0kq2MJEkrjon3_7xCqdCU1p52O62teJRT7XPh1Bnxn8w38ZhuUpzGY-yQHQMAVkVq616h8XSrFhrJuRq1w-FYgSJTJM5yvWqwqqgg-Awh88vyA.webp" alt="경기도 수원">
+      <div class="col-10">
+        <h3 id="birth">내가 태어난 곳</h3>
+        <div class="row">
+          <div class="col-4">
+            <img style="width: 100%;" src="https://i.namu.wiki/i/6Rr4wTa2roglkQf_z3gx07O-O97-yG1i5rsjDyVu0kq2MJEkrjon3_7xCqdCU1p52O62teJRT7XPh1Bnxn8w38ZhuUpzGY-yQHQMAVkVq616h8XSrFhrJuRq1w-FYgSJTJM5yvWqwqqgg-Awh88vyA.webp" alt="경기도 수원">
+          </div>
+          <div class="col-8">
             <p>
               제가 태어난 곳은 경기도 수원시의 한 산부인과입니다.
               태어날 때 부터 수원에서 태어나 초중고등학교 시절 모두 수원에서 보냈고
               지금까지도 수원에서 살고있습니다.
             </p>
-          </li>
-          
-          <li id="place"><p>내가 가봤던 곳 또는 가보고 싶은 곳</p>
-            <img style="width: 20%; float: top;" src="https://i.namu.wiki/i/ZAnVfLbWUDzfk7V0zNc-Ho3vIiHMp6qav6tcgC2XJjE_0zDPh8EBR7T46VbtQb89sAjV0zw83lYuNQycah3hzsC5KYg4GyaPtETsoCWgsrBIkfvAo8JvZasOptoCYPWuzUmu2PVNH1nvK__Lj_iiyg.webp" alt="인천 영종도">
+          </div>
+        <div class="row mt-5">
+          <h3 id="place">내가 가봤던 곳 또는 가보고 싶은 곳</h3>
+          <div class="col-4">
+            <img style="width: 100%;" src="https://i.namu.wiki/i/ZAnVfLbWUDzfk7V0zNc-Ho3vIiHMp6qav6tcgC2XJjE_0zDPh8EBR7T46VbtQb89sAjV0zw83lYuNQycah3hzsC5KYg4GyaPtETsoCWgsrBIkfvAo8JvZasOptoCYPWuzUmu2PVNH1nvK__Lj_iiyg.webp" alt="인천 영종도">
+          </div>
+          <div class="col-8">
             <p>
               가봤던 곳 그리고 또 가고 싶은 곳은 인천 영종도입니다.
               처음 영종도를 알게된 계기는 군대에서 자대배치를 받았을 때 였습니다.
@@ -56,25 +65,36 @@
               보는 사람의 마음이 편안해지는 곳이라고 느껴지기 때문입니다.
               특히 친구들과 갔었던 카라반 캠핑장은 아직까지도 제 마음 속 좋은 추억으로 남아있습니다.
             </p>
-          </li>
-          <li id="food">내가 좋아하는 음식</li>
-          <img style="width: 20%; float: top;" src="https://i.namu.wiki/i/lktia2FUk7dvOr6UDR-Acp3IM3aDEreXzwo9pbq_r1T5W3AtejSE8W9pPukMDi63yshcMMM3lmiDieorfMkT9UV1wTIWLKwEhQsAohRLcyjZQus-ALMVQMNSyxYhPCkSY-03T2F2FZGIu2FnzyddIQ.webp" alt="김치찌개">
-          <p>
-            매일 먹다보면 질리고 쳐다보기도 싫을 때가 있지만
-            막상 며칠 지나고보면 다시 생각나는 음식인 김치찌개가 제가 제일 좋아하는 음식입니다.
-            어렸을 때 부터 저희 어머니가 해주셨을 때도, 제가 직접 끓였을 때도, 밖에서 사먹을 때도
-            개인적인 만족감이 높은 음식이다보니 어느 순간부터 제가 제일 좋아하는 음식으로 자리를 잡았습니다.
-          </p>
-          <li id="hobby">내가 좋아하는 것</li>
-          <img style="width: 20%; float: top;" src="https://i.namu.wiki/i/bsrdwgVrsrfO2ZxlgfB2108jVzX-KEYZL5QrfYlvpuUqXKXewPkRLUKP3HFhUukO5SvE138hFwzQYP9zJ2x1cXpNhKMqvvC_rqbOLBBUZyLIRGElXjuhxZTj-4i68hx9AzseKYHRVGZ-d_67HLRRCQ.webp" alt="게임">
+          </div>
+        </div>
+        <div class="row mt-5">
+          <h3 id="food">내가 좋아하는 음식</h3>
+          <div class="col-4">
+            <img style="width: 100%;" src="https://i.namu.wiki/i/lktia2FUk7dvOr6UDR-Acp3IM3aDEreXzwo9pbq_r1T5W3AtejSE8W9pPukMDi63yshcMMM3lmiDieorfMkT9UV1wTIWLKwEhQsAohRLcyjZQus-ALMVQMNSyxYhPCkSY-03T2F2FZGIu2FnzyddIQ.webp" alt="김치찌개">
+          </div>
+          <div class="col-8">
+            <p>
+              매일 먹다보면 질리고 쳐다보기도 싫을 때가 있지만
+              막상 며칠 지나고보면 다시 생각나는 음식인 김치찌개가 제가 제일 좋아하는 음식입니다.
+              어렸을 때 부터 저희 어머니가 해주셨을 때도, 제가 직접 끓였을 때도, 밖에서 사먹을 때도
+              개인적인 만족감이 높은 음식이다보니 어느 순간부터 제가 제일 좋아하는 음식으로 자리를 잡았습니다.
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <h3 id="hobby">내가 좋아하는 것</h3>
+          <div class="col-4">
+            <img style="width: 100%;" src="https://i.namu.wiki/i/bsrdwgVrsrfO2ZxlgfB2108jVzX-KEYZL5QrfYlvpuUqXKXewPkRLUKP3HFhUukO5SvE138hFwzQYP9zJ2x1cXpNhKMqvvC_rqbOLBBUZyLIRGElXjuhxZTj-4i68hx9AzseKYHRVGZ-d_67HLRRCQ.webp" alt="게임">
+          </div>
+          <div class="col-8">
             <p>
               다 큰 남성이나 어린 아이같이 남성이라면 가장 보편적으로 갖고있는 취미인 게임입니다.
               미취학 아동일 때 부터 접했었던 컴퓨터이자 게임이다 보니
               그때도 지금도 그리고 더 나이를 먹은 뒤에도 평생의 취미로 함께하지 않을까 싶습니다.
               물론 그런 게임보다도 더 좋아하는 건 제가 좋아하는 사람들과 소중한 시간을 함께 보내는 것 입니다.
             </p>
-        </ol>
-      </div>
+          </div>
+        </div>
       <nav class="fixed-bottom">
         <div>
           <a href="#intro"><i class="fa-solid fa-up-long float-end mb-4 me-4"></i></a>
