@@ -9,6 +9,11 @@
   <script src="https://kit.fontawesome.com/66b51397af.js" crossorigin="anonymous"></script>
   <style>
     * {font-family: 'Noto Sans KR', sans-serif;}
+    a:link {text-decoration: none;}
+    a:link {color: black;}
+    a:visited {color: black;}
+    a:hover {color: black;}
+    a:active {color: black;}
   </style>
 </head>
 <body>
@@ -31,50 +36,87 @@
   
         <div class="modal-body">
           <table class="table">
-            <tr>
-              <th style="width: 50%;" class="text-center">상품명</th>
-              <th style="width: 25%;" class="text-center">수량</th>
-              <th style="width: 25%;" class="text-center">가격</th>
-            </tr>
-            <tr>
-              <td><img src="./멸치육수.jpg" style="width: 100px;" alt="">멸치육수</td>
-              <td class="text-center">
-                <select class="form-select" style="width: 30%; margin: auto;">
-                  <option value="1" selected>1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </td>
-              <td class="text-center">6,800원</td>
-            </tr>
-            <tr>
-              <td><img src="./캡사이신.png" style="width: 100px;" alt="">캡사이신</td>
-              <td>
-                <select class="form-select" style="width: 30%; margin: auto;">
-                  <option value="1" selected>1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </td>
-              <td class="text-center">6,770원</td>
-            </tr>
-            <tr>
-              <td><img src="./떡볶이 양념 분말.jpg" style="width: 100px;" alt="">떡볶이 양념 분말</td>
-              <td>
-                <select class="form-select" style="width: 30%; margin: auto;">
-                  <option value="1" selected>1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </td>
-              <td class="text-center">6,810원</td>
-            </tr>
+            <form action="/" method="get">
+              <tr>
+                <th style="width: 50%;" class="text-center">상품명</th>
+                <th style="width: 25%;" class="text-center">수량</th>
+                <th style="width: 25%;" class="text-center">가격</th>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check1" name="check" value="val1" checked>
+                    <label for="check1" class="form-check-label">
+                      <a href="https://www.coupang.com/vp/products/6352727510?itemId=13374482829&vendorItemId=3000178202&sourceType=srp_product_ads&clickEventId=38d6beb0-4000-11ef-90a6-5cc5ebfca8e0&korePlacement=15&koreSubPlacement=1&q=%EB%A9%B8%EC%B9%98%EC%9C%A1%EC%88%98&itemsCount=49&searchId=0d0aeaf64b354061bd53ff015ae8cc63&rank=0&isAddedCart=">
+                      <img src="./멸치육수.jpg" style="width: 100px;" alt="">멸치육수
+                      </a>
+                    </label>
+                  </div>
+                </td>
+                <td class="text-center">
+                  <select class="form-select form-select-sm" style="width: 25%; margin: auto;">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+                <td class="text-center">6,800 원</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check2" name="check" value="val2" checked>
+                    <label for="check2" class="form-check-label">
+                      <a href="https://www.coupang.com/vp/products/7370280531?itemId=19010646294&vendorItemId=3000093342&sourceType=srp_product_ads&clickEventId=7e170430-4000-11ef-921d-f08ec16dd820&korePlacement=15&koreSubPlacement=1&q=%EC%BA%A1%EC%82%AC%EC%9D%B4%EC%8B%A0&itemsCount=49&searchId=da5033e758254e51822854a5ec75cf83&rank=0&isAddedCart=">
+                        <img src="./캡사이신.png" style="width: 100px;" alt="">캡사이신
+                      </a>
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <select class="form-select form-select-sm" style="width: 25%; margin: auto;">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+                <td class="text-center">6,770 원</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check3" name="check" value="val3" checked>
+                    <label for="check3" class="form-check-label">
+                      <a href="https://www.coupang.com/vp/products/236356925?itemId=749469293&vendorItemId=70439419716&q=%EB%96%A1%EB%B3%B6%EC%9D%B4+%EC%96%91%EB%85%90+%EB%B6%84%EB%A7%90&itemsCount=36&searchId=b1109f11c76145efb5a4a95b6a2cc27e&rank=2&isAddedCart=">
+                      <img src="./떡볶이 양념 분말.jpg" style="width: 100px;" alt="">떡볶이 양념 분말
+                      </a>
+                    </label>
+                  </div>
+                  
+                </td>
+                <td>
+                  <select class="form-select form-select-sm" style="width: 25%; margin: auto;">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+                <td class="text-center">6,810 원</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td class="text-center">
+                  총합 : 23,800 원
+                </td>
+              </tr>
+            </form>
           </table>
         </div>
   
