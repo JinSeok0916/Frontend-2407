@@ -2,7 +2,7 @@
  * 자바스크립트의 자료형 
 */
 
-// 1. 문자열{Strin}g)
+// 1. 문자열(String)
 console.log("He said 'i love you.'");
 console.log('He said "i love you."');
 console.log("I'll be back.");
@@ -18,7 +18,7 @@ let hello = '안녕하세요?';
 console.log(hello, hello[0], hello[3]); // 안녕하세요? 안 세
 
 // 문자열 길이
-// 문자열.속성(attribute), 메소드(method)()
+// 문자열.속성(attribute), 메소드
 console.log(hello.length, hello.charAt(0), hello.charAt(3)); // [] = .charAt
 
 // '''' > 불가능, '""' > 가능
@@ -27,7 +27,7 @@ console.log(hello.length, hello.charAt(0), hello.charAt(3)); // [] = .charAt
 console.log(hello + '문자열의 길이는 ' + hello.length + '입니다.');
 console.log(`${hello} 문자열의 길이는 ${hello.length} 입니다.`);
 
-// 2. 숫자(Number)
+// 2. 숫자열(Number)
 // 자바스크립트에서는 정수형(integer), 실수형(floating point)을 구분하지  않는다.
 let a = 3, b = 4;
 console.log(a + b, a - b, a * b, a / b, b % a);
@@ -48,4 +48,4 @@ console.log(x > 0 && x < 8);
 // 자료형 검사
 console.log(typeof hello, typeof(a), typeof(true));   // string, number, boolean
 
-let y= a + -b;    // + binary operator, - unary operator
+let y = a + -b;    // + binary operator, - unary operator
