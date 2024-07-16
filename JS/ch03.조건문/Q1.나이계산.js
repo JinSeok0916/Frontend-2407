@@ -25,11 +25,11 @@ if (tYear == bYear)
     age = 0;
 
 // if-else-if
-if ((tMonth - bMonth) > 0)
+if (tMonth > bMonth)
     age = tYear - bYear;
-else if ((tMonth - bMonth) < 0)
+else if (tMonth < bMonth)
     age = tYear - bYear - 1;
-else if ((tMonth - bMonth) == 0) {
+else {
     if (tDay >= bDay)
         age = tYear - bYear;
     else
@@ -45,11 +45,6 @@ let age = (tMonth - bMonth) > 0 ? tYear - bYear
         : tYear - bYear - 1;
 if (tYear == bYear)
     age = 0;
-
-// switch
-switch (tMonth - bMonth) {
-    case 
-}
 
 console.log(`${bYear}-${bMonth}-${bDay}, 나이: ${age}`);
 console.log(`${tYear}-${tMonth}-${tDay}`);
