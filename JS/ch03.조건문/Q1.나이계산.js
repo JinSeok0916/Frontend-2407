@@ -35,15 +35,21 @@ else if ((tMonth - bMonth) == 0) {
     else
         age = tYear - bYear - 1;
 }
+if (tYear == bYear)
+    age = 0;
 
 // 3항연산자
 let age = (tMonth - bMonth) > 0 ? tYear - bYear
         : (tMonth - bMonth) < 0 ? tYear - bYear - 1
         : tDay >= bDay ? tYear - bYear
         : tYear - bYear - 1;
+if (tYear == bYear)
+    age = 0;
 
 // switch
-switch
+switch (tMonth - bMonth) {
+    case 
+}
 
 console.log(`${bYear}-${bMonth}-${bDay}, 나이: ${age}`);
 console.log(`${tYear}-${tMonth}-${tDay}`);
