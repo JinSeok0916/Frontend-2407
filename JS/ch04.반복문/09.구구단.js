@@ -3,8 +3,7 @@
 
 for (i = 2; i < 10; i++) {
     for (k = 1; k < 10; k++) {
-        n = i * k;
-        console.log(`${i} x ${k} = ${n}`);
+        console.log(`${i} x ${k} = ${i * k}`);
     }
 }
 
