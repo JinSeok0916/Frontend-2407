@@ -6,7 +6,7 @@ for (let i = 1; i <= 10; i += 2)
 sumOdd = 0;
 for (let i = 1; i <= 10; i++) {
     if (i % 2 == 0)
-        continue;       // skip??
+        continue;
     sumOdd += i;
 }
 console.log(sumOdd);

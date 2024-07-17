@@ -19,7 +19,6 @@ else if (score >= 60)
     grade = 'D';
 else
     grade = 'F';
-
 console.log(`점수: ${score}, 학점: ${grade}`);
 
 // FizzBuzz
@@ -36,5 +35,4 @@ else if (num % 7 == 0)
 else if (num % 5 == 0)
     number = 'Fizz';
 else number = num;
-
 console.log(`${number}`);

@@ -15,6 +15,5 @@ if (alarmMin < 45) {
 } else {
     newHour = alarmHour, newMin = alarmMin - 45
 }
-
 console.log(`기존의 설정한 알람 시간은 ${alarmHour}시 ${alarmMin}분 입니다.`);
 console.log(`새롭게 설정한 알람 시간은 ${newHour}시 ${newMin}분 입니다.`);

@@ -15,5 +15,4 @@ if (x < 0 && y < 0)
     Quadrant = '3사분면';
 if (x > 0 && y < 0)
     Quadrant = '4사분면';
-
 console.log(`x의 값은 ${x}, y의 값은 ${y}이므로 ${Quadrant}이다.`);
