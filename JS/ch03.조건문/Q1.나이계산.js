@@ -12,31 +12,31 @@ let tDay = today.getDate();      // today.getDay >> 요일  today.getDate >> 일
 
 // if
 if (tMonth > bMonth)
-    age = tYear - bYear;
+  age = tYear - bYear;
 if (tMonth < bMonth)
-    age = tYear - bYear - 1;
+  age = tYear - bYear - 1;
 if (tMonth == bMonth) {
-    if (tDay >= bDay)
-        age = tYear - bYear;
-    else
-        age = tYear - bYear - 1;
+  if (tDay >= bDay)
+    age = tYear - bYear;
+  else
+    age = tYear - bYear - 1;
 }
 if (tYear == bYear)
-    age = 0;
+  age = 0;
 
 // if-else-if
 if (tMonth > bMonth)
-    age = tYear - bYear;
+  age = tYear - bYear;
 else if (tMonth < bMonth)
-    age = tYear - bYear - 1;
+  age = tYear - bYear - 1;
 else {
-    if (tDay >= bDay)
-        age = tYear - bYear;
-    else
-        age = tYear - bYear - 1;
+  if (tDay >= bDay)
+    age = tYear - bYear;
+  else
+    age = tYear - bYear - 1;
 }
 if (tYear == bYear)
-    age = 0;
+  age = 0;
 
 // 3항연산자
 let age = (tMonth - bMonth) > 0 ? tYear - bYear
@@ -44,7 +44,6 @@ let age = (tMonth - bMonth) > 0 ? tYear - bYear
         : tDay >= bDay ? tYear - bYear
         : tYear - bYear - 1;
 if (tYear == bYear)
-    age = 0;
-
+  age = 0;
 console.log(`${bYear}-${bMonth}-${bDay}, 나이: ${age}`);
 console.log(`${tYear}-${tMonth}-${tDay}`);
