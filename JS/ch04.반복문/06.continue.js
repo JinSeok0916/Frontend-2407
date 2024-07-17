@@ -1,4 +1,5 @@
 // 1~10 홀수의 합
+
 let sumOdd = 0;
 for (let i = 1; i <= 10; i += 2)
     sumOdd += i;
