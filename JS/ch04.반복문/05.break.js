@@ -17,9 +17,11 @@ console.log(sumDice);
 // break는 loop의 한단계만 벗어날 수 있다.
 for (let i = 0; i < 3; i++) {
     for (let k = 0; k < 5; k++){
-        if (k == i)
+        if (k == i) {
             console.log('point C', k);
             break;
+        } 
+        console.log('point D');
     }
     console.log('point A', i);
 }
