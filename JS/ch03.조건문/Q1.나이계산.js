@@ -24,20 +24,6 @@ if (tMonth == bMonth) {
 if (tYear == bYear)
   age = 0;
 
-// if-else-if
-if (tMonth > bMonth)
-  age = tYear - bYear;
-else if (tMonth < bMonth)
-  age = tYear - bYear - 1;
-else {
-  if (tDay >= bDay)
-    age = tYear - bYear;
-  else
-    age = tYear - bYear - 1;
-}
-if (tYear == bYear)
-  age = 0;
-
 // 3항연산자
 let age = (tMonth - bMonth) > 0 ? tYear - bYear
         : (tMonth - bMonth) < 0 ? tYear - bYear - 1

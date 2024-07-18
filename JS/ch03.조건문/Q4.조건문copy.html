@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤년 확인</title>
+    <style>
+        input, button {padding: 5px;}
+    </style>
+    <script>
+        function isQuadrant(x, y) {
+            return x > 0 && y > 0;
+        }
+        function checkQuadrant() {
+            let x = Number(document.getElementById('quadrantX').value);
+            let y = Number(document.getElementById('quadrantY').value);
+            let result = isQuadrant(x, y) ? '1'
+            : x < 0 && y > 0 ? '2'
+            : x < 0 && y < 0 ? '3'
+            : x > 0 && y < 0 ? '4'
+            : 'none';
+            document.getElementById('result').innerHTML = '<strong>' + result + '</strong>';
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h3>윤년 확인</h3>
+    <hr>
+    <input type="text" id="quadrantX" placeholder="확인할 년도를 입력하세요.">
+    <input type="text" id="quadrantY" placeholder="확인할 년도를 입력하세요.">
+    <button onclick="checkQuadrant()">확인</button>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

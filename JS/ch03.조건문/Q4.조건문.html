@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+  <style>
+    input, button {padding: 5px;}
+  </style>
+  <script>
+    const today = new Date();
+    let tYear = today.getFullYear();
+    let tMonth = today.getMonth() + 1;
+    let tDay = today.getDate();
+    
+    function isAge(bYear, bMonth, bDay) {
+      return (tMonth - bMonth) > 0;
+    }
+    function checkAge () {
+      let bYear = Number(document.getElementById('bYear').value);
+      let bMonth = Number(document.getElementById('bMonth').value);
+      let bDay = Number(document.getElementById('bDay').value);
+      let ageResult = isAge(bYear, bMonth, bDay) ? tYear - bYear
+          : (tMonth - bMonth) < 0 ? tYear - bYear - 1
+          : tDay >= bDay ? tYear - bYear
+          : tYear - bYear - 1;
+      document.getElementById('ageResult').innerHTML = ageResult
+    }
+
+    function isQuadrant(x, y) {
+      return x == 0 && y == 0;
+    }
+    function checkQuadrant() {
+      let x = Number(document.getElementById('quadrantX').value);
+      let y = Number(document.getElementById('quadrantY').value);
+      let quadrantResult = isQuadrant(x, y) ? 'none'
+        : x > 0 && y > 0 ? '1'
+        : x < 0 && y > 0 ? '2'
+        : x < 0 && y < 0 ? '3'
+        : '4';
+      document.getElementById('quadrantResult').innerHTML = quadrantResult;
+    }
+  </script>
+</head>
+<body style="margin: 40px;">
+    <h3>나이계산</h3>
+    <hr>
+    <input type="text" id="bYear" placeholder="년도를 입력하세요.">
+    <input type="text" id="bMonth" placeholder="월을 입력하세요.">
+    <input type="text" id="bDay" placeholder="일을 입력하세요.">
+    <button onclick="checkAge">확인</button>
+    <hr>
+    <div id="ageResult"></div>
+    <br>
+
+    <h3>사분면 찾기</h3>
+    <hr>
+    <input type="text" id="quadrantX" placeholder="x 값을 입력하세요.">
+    <input type="text" id="quadrantY" placeholder="y 값을 입력하세요.">
+    <button onclick="checkQuadrant">확인</button>
+    <hr>
+    <div id="quadrantResult"></div>
+    <br>
+
+    <h3>주사위 도박</h3>
+    <hr>
+    <button onclick="checkDice">확인</button>
+    <hr>
+    <div id="diceResult"></div>
+</body>
+</html>
