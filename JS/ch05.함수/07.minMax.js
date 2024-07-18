@@ -4,12 +4,16 @@ let arr = [45, 3, 27, 89, 6, 24];
 let minVal = 0;
 let maxVal = 0;
 
-for (i = 1; arr.length >= i; i++) {
-    minVal += arr[arr.length - i];
+for (let num of arr) {
+    minVal += num
+    maxVal -= num
 }
-for (i = 1; arr.length >= i; i++) {
-    maxVal -= arr[arr.length - i];
-}
+// for (i = 1; arr.length >= i; i++) {
+//     minVal += arr[arr.length - i];
+// }
+// for (i = 1; arr.length >= i; i++) {
+//     maxVal -= arr[arr.length - i];
+// }
 
 console.log(`${minVal}, ${maxVal}`);
 
