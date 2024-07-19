@@ -40,6 +40,36 @@
         : '4';
       document.getElementById('quadrantResult').innerHTML = quadrantResult;
     }
+
+
+    function isDice(dice1, dice2, dice3) {
+      if (dice1 == dice2 && dice2 == dice3)
+        reward = 100  00 + dice1 * 1000;
+      else if (dice1 == dice2 || dice1 == dice3 || dice2 == dice3) {
+        if (dice1 == dice2)
+          reward = 1000 + dice1 * 100;
+        if (dice2 == dice3)
+          reward = 1000 + dice2 * 100;
+        if (dice3 == dice1)
+          reward = 1000 + dice3 * 100;
+      }
+      else {
+        if (dice1 > dice2 && dice1 > dice3)
+          reward = dice1 * 100;
+        if (dice2 > dice3 && dice2 > dice1)
+          reward = dice2 * 100;
+        if (dice3 > dice1 && dice3 > dice2)
+          reward = dice3 * 100;
+      }
+      return reward
+    }
+    function checkDice () {
+      let dice1 = Math.ceil(Math.random() * 6);
+      let dice2 = Math.ceil(Math.random() * 6);
+      let dice3 = Math.ceil(Math.random() * 6);
+      let diceResult = isDice(dice1, dice2, dice3);
+      document.getElementById('diceResult').innerHTML = diceResult;
+    }
   </script>
 </head>
 <body style="margin: 40px;">
@@ -48,7 +78,7 @@
     <input type="text" id="bYear" placeholder="년도를 입력하세요.">
     <input type="text" id="bMonth" placeholder="월을 입력하세요.">
     <input type="text" id="bDay" placeholder="일을 입력하세요.">
-    <button onclick="checkAge">확인</button>
+    <button onclick="checkAge()">확인</button>
     <hr>
     <div id="ageResult"></div>
     <br>
@@ -57,14 +87,14 @@
     <hr>
     <input type="text" id="quadrantX" placeholder="x 값을 입력하세요.">
     <input type="text" id="quadrantY" placeholder="y 값을 입력하세요.">
-    <button onclick="checkQuadrant">확인</button>
+    <button onclick="checkQuadrant()">확인</button>
     <hr>
     <div id="quadrantResult"></div>
     <br>
 
     <h3>주사위 도박</h3>
     <hr>
-    <button onclick="checkDice">확인</button>
+    <button onclick="checkDice()">확인</button>
     <hr>
     <div id="diceResult"></div>
 </body>
