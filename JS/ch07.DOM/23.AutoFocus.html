@@ -20,20 +20,21 @@
             }
 
             input1.onkeyup = () => {
+                print ();
                 if (input1.value.length >= 6)
                     input2.focus();
             }
             input2.onkeyup = e => {
+                print ();
                 // if (e.keyCode == 8 && input2.value.length == 0)     // 입력한 글자가 없고, 백스페이스를 입력했을 때
                 if (e.code === 'Backspace' && input2.value.length == 0)    
                     input1.focus();
                 // if (e.keyCode == 13)
-                if (e.code === 'Enter')
-                    print ();
+                // if (e.code === 'Enter')
             }
-            button.onclick = () => {
-                print();
-            }
+            // button.onclick = () => {
+            //     print();
+            // }
         }
     </script>
 </head>
