@@ -16,7 +16,7 @@
             return `${now.getFullYear()}-${twoDigit(now.getMonth() + 1)}-${twoDigit(now.getDate())}(${week[now.getDay()]})`
         }
         function myTime(now) {
-            return `${twoDigit(now.getHours)}:${twoDigit(now.getMinutes)}:${twoDigit(now.getSeconds)}`;
+            return `${twoDigit(now.getHours())}:${twoDigit(now.getMinutes())}:${twoDigit(now.getSeconds())}`;
         }
         window.onload = () => {
             setInterval(() => {
