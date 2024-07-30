@@ -18,8 +18,8 @@
             document.head.appendChild(kakaoScript);
 
         };
-        function handleMap() {
-            let place = document.getElementById('input').value;
+        function handleMap() {                                      // button으로 input값 넣는 법
+            let place = document.getElementById('input').value;     // 함수처리 후 .value
             let roadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
             let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
             let params1 = 'currentPage=1&countPerPage=5';
@@ -87,7 +87,7 @@
     <input onchange="handleMap()" type="text" id="input" placeholder="임의의 장소를 입력하세요.">
     <button onclick="handleMap()">지도 그리기</button>
     <hr>
-    <h3 id="place"></h3>
+    <h3 id="place">임의의 장소</h3>
     <ul>
         <li>도로명주소: <span id="roadAddr"></span></li>
         <li>위도: <span id="lat"></span></li>
