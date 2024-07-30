@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/66b51397af.js" crossorigin="anonymous"></script>
+  <script src="./key.js"></script>
+  <style>
+    * {font-family: 'Noto Sans KR', sans-serif;}
+    a {text-decoration: none; color: inherit;}
+  </style>
+  <script>
+    window.onload = () => {
+      const kakaoScript = document.createElement('script');
+      kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
+      kakaoScript.onload = () => {
+        kakao.maps.load(() => {});
+      };
+      document.head.appendChild(kakaoScript);
+      let place = '수원시청';
+      let roadBaseUrl = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
+      let kakaoBaseUrl = 'https://dapi.kakao.com/v2/local/search/address.json';
+      let params1 = 'currentPage=1&countPerPage=5';
+      let params2 = `keyword=${encodeURIComponent(place)}`;
+      let params3 = `confmKey=${roadAddrKey}&resultType=json`;
+      let roadUrl = `${roadBaseUrl}?${params1}&${params2}&${params3}`;
+      fetch(roadUrl)
+        .then(response => response.json())
+        .then(result => {
+          let roadAddr = result.results.juso[0].roadAddr;
+          document.getElementById('place').innerHTML = roadAddr;
+          
+          let kakaoUrl = `${kakaoBaseUrl}?query=${encodeURIComponent(roadAddr)}`;
+          let header = {Authorization: `KakaoAK ${kakaoRestKey}`};
+
+          fetch(kakaoUrl, {headers: header})
+            .then(response => response.json())
+            .then(result => {
+              let lat = parseFloat(result.documents[0].y);
+              let lon = parseFloat(result.documents[0].x);
+              drawMap('place', lat, lon);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        });
+    };
+    function drawMap(place, lat, lon) {
+      let container = document.getElementById('map');
+      let position = new kakao.maps.LatLng(lat, lon);
+      let options = {
+        center: position,
+        level: 8
+      };
+      let map = new kakao.maps.Map(container, options);
+      let marker = new kakao.maps.Marker({
+        map: map,
+        position: position
+      });
+      let infowindow = new kakao.maps.InfoWindow({
+        content : `<div style="padding:5px;">${place}</div>`
+      });
+      kakao.maps.event.addListener(marker, 'mouseover', () => {
+        infowindow.open(map, marker);
+      });
+      kakao.maps.event.addListener(marker, 'mouseout', () => {
+        infowindow.close();
+      });
+    }
+    function modify() {
+      let header = document.querySelector('#header');
+      let originalText = header.innerHTML;
+      header.innerHTML = '매운 음식이 먹고싶은 날';
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <a class="navbar-brand mx-5" href="#">
+          <img src="./KakaoTalk_20240709_135607705.png" alt="Logo" style="height: 36px;">
+        </a>
+        <li class="nav-item ms-3">
+          <a class="nav-link active" href="#"><i class="fa-solid fa-calendar-days"></i> 스케줄</a>
+        </li>
+      </ul>
+      <span class="navbar-text me-3">최진석님 환영합니다.</span>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 80px;">
+    <div class="row" style="height: 1500px;">
+      <div class="col-3">
+        <img class="rounded-circle" src="./cat.jfif" alt="프로필" style="width: 90%;">
+        <div class="mt-2" style="font-size: 0.9rem;">
+          <div id="header">오늘의 상태 메세지를 이 자리에 적습니다.</div>
+          <button onclick="modify()">수정</button></a>
+        </div>
+        <div class="mt-5">
+          <i class="fa-solid fa-envelope"></i> gkgjfj@naver.com<br>
+          <a href="https://github.com/JinSeok0916" target="_blank">
+          <i class="fa-brands fa-github"></i> JinSeok0916</a><br>
+          <i class="fa-solid fa-location-dot"></i> 수원시 영통구
+          <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%98%81%ED%86%B5%EA%B5%AC%EB%82%A0%EC%94%A8">
+            <span class="badge bg-secondary">날씨</span></a><br>
+          <button type="button" class="btn btn-outline-secondary btn-sm mt-2">Edit Profile</button><br><br>
+          <ul class="nav flex-column">
+            <li><h5>누르면 이동합니다.</h5></li>
+            <li><a class="info" href="#birth">Birth</a></li>
+            <li><a class="info" href="#place1">Place</a></li>
+            <li><a class="info" href="#food">Food</a></li>
+            <li><a class="info" href="#hobby">Hobby</a></li><br>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-9">
+        <section>
+          <h3 id="birth">내가 태어난 곳</h3>
+          <img style="width: 30%;" src="./수원.jpg">
+          <p>
+          <span id="place"></span><br>
+          제가 태어난 곳은 경기도 수원시의 한 산부인과입니다.
+          태어날 때 부터 수원에서 태어나 초중고등학교 시절 모두 수원에서 보냈고
+          지금까지도 수원에서 살고있습니다.
+          </p>
+          <div id="map" style="width:600px; height:400px; margin-top: 20px;"></div>
+        </section>
+        <section class="row mt-5">
+          <h3 id="place1">내가 가봤던 곳 또는 가보고 싶은 곳</h3>
+          <img style="width: 30%;" src="./영종도.webp">
+          <p>
+          가봤던 곳 그리고 또 가고 싶은 곳은 인천 영종도입니다.
+          처음 영종도를 알게된 계기는 군대에서 자대배치를 받았을 때 였습니다.
+          그 전에는 어렴풋이 인천공항이 있던 곳으로만 알고 있었는데
+          영종도라는 섬을 직접 두 눈으로 보고 느끼게 된 건 태어난 지 21년이 지난 후 였습니다.
+          육지랑 꽤나 먼 거리가 떨어진 섬이라는 걸 몸으로도 느낄 수 있을 정도로
+          사면이 바다로 둘러쌓여있다보니 해풍이 많이도 불어 여름엔 습하고 겨울엔 추웠습니다만
+          막상 군대에서 바라본 시선이 아니라 전역을 하고 난 뒤 민간인의 시선에서는
+          눈을 어디에 둬도 바다로 가득차게되는 갇혀있지 않고 트여있는
+          보는 사람의 마음이 편안해지는 곳이라고 느껴지기 때문입니다.
+          특히 친구들과 갔었던 카라반 캠핑장은 아직까지도 제 마음 속 좋은 추억으로 남아있습니다.
+          </p>
+        </section>
+        <section class="row mt-5">
+          <h3 id="food">내가 좋아하는 음식</h3>
+          <img style="width: 30%;" src="./김치찌개.webp">
+          <p>
+          매일 먹다보면 질리고 쳐다보기도 싫을 때가 있지만
+          막상 며칠 지나고보면 다시 생각나는 음식인 김치찌개가 제가 제일 좋아하는 음식입니다.
+          어렸을 때 부터 저희 어머니가 해주셨을 때도, 제가 직접 끓였을 때도, 밖에서 사먹을 때도
+          개인적인 만족감이 높은 음식이다보니 어느 순간부터 제가 제일 좋아하는 음식으로 자리를 잡았습니다.
+          </p>
+        </section>
+        <section class="row mt-5">
+          <h3 id="hobby">내가 좋아하는 것</h3>
+          <img style="width: 30%;" src="./게임.webp">
+          <p>
+          다 큰 남성이나 어린 아이같이 남성이라면 가장 보편적으로 갖고있는 취미인 게임입니다.
+          미취학 아동일 때 부터 접했었던 컴퓨터이자 게임이다 보니
+          그때도 지금도 그리고 더 나이를 먹은 뒤에도 평생의 취미로 함께하지 않을까 싶습니다.
+          물론 그런 게임보다도 더 좋아하는 건 제가 좋아하는 사람들과 소중한 시간을 함께 보내는 것 입니다.
+          </p>
+        </section><br><br><br>
+      </div>
+  <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+    <div class="container-fluid justify-content-center">
+      <span class="navbar-text">
+        Footer
+      </span>
+    </div>
+  </nav>
+</body>
+</html>
