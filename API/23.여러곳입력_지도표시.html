@@ -25,9 +25,15 @@
 
         async function handleMaps() {
             let places = [];
-            for (let i = 1; i <= 5; i++)
-                places.push($(`#input${i}`).val());
-
+            for (let i = 1; i <= 5; i++) {
+                let value = $(`#input${i}`).val();
+                if (value === '') {
+                    alert('');
+                    return;
+                }
+                places.push(value)
+            }
+            
             let coords = [];
             let sumLat = 0.0, sumLon = 0.0;
             for (let place of places) {
