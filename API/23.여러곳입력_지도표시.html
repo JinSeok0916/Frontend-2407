@@ -16,7 +16,7 @@
         let params3 = `confmKey=${roadAddrKey}&resultType=json`;
 
         function handleMaps() {
-            places.push('#input1, #input2, #input3, #input4, #input5')
+            places.push($(`#input${i}`).val());
             const kakaoScript = document.createElement('script');
             kakaoScript.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJsKey}&autoload=false`;
             kakaoScript.onload = () => {
