@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 순서를 기억하자. 선택(선택자)하고 스타일 적용 */
+    body {
+        background-color: aquamarine;
+        width: 1024px;
+    }
+    #header {
+        background-color: blue;
+        width: 1000px;
+        height: 100px;
+    }
+    #nav {
+        background-color: chocolate;
+        width: 1000px;
+        height: 50px;
+    }
+    .section {
+        background-color: crimson;
+        width: 400px;
+        height: 150px;
+        display: inline-flex;
+        float: left;
+    }
+</style>
+<body>
+    <div id = "header"></div> <!-- id는 문서 내에서 unique 해야한다. -->
+    <div id = "nav">
+        [home] [자바공부하기] [게시판]
+    </div>
+    <div class = "section">type1</div>
+    <div class = "section">type2</div>
+</body>
+</html>
