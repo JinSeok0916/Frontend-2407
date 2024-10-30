@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        width: 500px;
+        height: 300px;
+        border: 1px solid;
+    }
+    tr, th, td {
+        border: 1px solid;
+
+    }
+    td {
+        text-align: center;
+    }
+    th {
+        background-color: rgb(247, 225, 196);
+    }
+    th:hover {
+        background-color: rgb(243, 217, 177);
+    }
+</style>
+<body>
+    <!-- table 태그
+        1. row -> <tr>
+        2. column -> <td>
+        3. row를 합치는 것 -> rowspan
+        4. col을 합치는 것 -> colspan 
+    -->
+    <table>
+        <tr>
+            <th>식당</th>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>수정/삭제</th>
+        </tr>
+        <tr>
+            <td rowspan="2">더원</td>
+            <td>사천짜장밥</td>
+            <td colspan="2">9000</td>
+        </tr>
+        <tr>
+            <td>짬뽕</td>
+            <td colspan="2">9000</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td colspan="2">회원이 되어주셔서 감사합니다</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td><input type="text"></td>
+            
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text"></td>
+            
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="가입">
+                <input type="submit" value="로그인">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

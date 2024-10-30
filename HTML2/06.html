@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 1280px;
+        height: 1024px;
+        border: 1px solid;
+        margin: 0px;    /* body 바깥쪽 document랑 사이 */
+    }
+    header {
+        /* display: inline-block; */
+        float: left;
+        width: 1280px;;
+        height: 100px;
+        background-color: beige;
+        padding-top: 20px;
+        box-sizing: border-box;     /* 고정시켜서 안늘어남 */
+    }
+    nav {
+        /* display: inline-block; */
+        float: left;
+        width: 1280px;
+        height: 30px;
+        background-color: bisque;
+        display: inline-block;
+    }
+    section {
+        /* display: inline-block; */
+        float: left;
+        width: 70%;
+        height: 400px;
+        background-color: antiquewhite;
+        display: inline-block;
+        padding-top: 10px;
+        padding-left: 10px;
+        box-sizing: border-box;     /* 고정시켜서 안늘어남 */
+    }
+    aside {
+        /* display: inline-block; */
+        float: left;
+        width: 30%;
+        height: 400px;
+        display: inline-block;
+        background-color: blanchedalmond;
+    }
+    #display {
+        display: inline-block;
+        width: 100%;
+        height: 200px;
+        background-color: burlywood;
+    }
+    footer {
+        /* display: inline-block; */
+        float: left;
+        display: inline-block;
+        width: 100%;
+        height: 30px;
+        border: 1px dotted;
+    }
+    .header_01 {    /* 여기 기준으로 마진은 header */
+        width: 1000px;
+        height: 30px;
+        /* border: 1px solid; */
+        text-align: center;
+        margin: 0px auto;   /* 가운데 정렬 의미 */
+    }
+    .header_01 h2 {
+        display: inline;
+        color: aquamarine;
+    }
+    input[type="text"],
+    input[type=":password"] {
+        height: 5px;
+        line-height: normal;
+        padding: .8em .5em;
+        
+    }
+    nav ul li {
+        display: inline-block;
+        width: 100px;
+        border: 1px solid;
+        margin-left: 5px;
+        text-align: center;
+    }
+    nav ul li:hover {
+        background-color: coral;
+    }
+    nav ul {
+        /* border: 1px solid; */
+        margin-top: 3px;
+    }
+    .display_01{
+        width: 24%;
+        height: 150px;
+        margin-top: 10px;
+        margin-left: 10px;
+        float: left;
+        border: 1px solid;
+    }
+    aside div {
+        width: 300px;
+        height: 150px;
+        margin: 0px auto;
+        text-align: center;
+    }
+    tr, th, td {
+        border: 1px solid;
+    }
+</style>
+<body>
+    <!-- <div id="header"></div> -->
+    <header>
+        <div class = "header_01">
+            <h2>프로그램은 맛있다</h2>
+        </div>
+        <div class = "header_01">
+            <form action="" method="">
+                <input type="text" size="30">
+                <input type="submit" value="search">
+            </form>
+        </div>
+    </header>   <!-- 시멘틱 태그 -->
+    <nav>
+        <ul>    <!-- 목록태그 ul의 자식이 4개 -->
+            <li>홈으로</li>
+            <li>그림으로</li>
+            <li>로그인</li>
+            <li>하단</li>
+        </ul>
+    </nav>
+    <section>
+        <div>
+            <span>오늘의 그림</span>                 <!-- 상대경로(현재위치(.)) 절대경로(경로가 루트(시작점)부터 지정) -->
+            <img src="./i014617716113.gif" alt="">    <!-- 개발자는 src에서 상대경로와 절대경로를 숙지한다. -->
+                                                    <!-- 이미지 주소는 로컬에 있는 이미지나 웹에 있는 이미지 모두 가능 -->
+        </div>
+    </section>
+    <aside>
+        <div>
+            <form action="" method="">
+                <table>
+                    <tr>
+                        <td colspan="2">회원이 되어주셔서 감사합니다</td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="text"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="가입">
+                            <input type="submit" value="로그인">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </aside>
+    <div id="display">
+        <div class="display_01">
+            <h3>짜장면</h3>
+            <hr>
+            <p>사천짜장면은 맛있다</p>
+        </div>
+        <div class="display_01">
+            <h3>짜장면</h3>
+            <hr>
+            <p>사천짜장면은 맛있다</p>
+        </div>
+        <div class="display_01">
+            <h3>짜장면</h3>
+            <hr>
+            <p>사천짜장면은 맛있다</p>
+        </div>
+        <div class="display_01">
+            <h3>짜장면</h3>
+            <hr>
+            <p>사천짜장면은 맛있다</p>
+        </div>
+    </div>
+    <footer>개발자 정보</footer>
+</body>
+</html>
