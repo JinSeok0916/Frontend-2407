@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><button class="num" onclick="inputNum(0)">1</button></td>
+            <td><button class="num" onclick="inputNum(1)">2</button></td>
+            <td><button class="num" onclick="inputNum(2)">3</button></td>
+        </tr>
+        <tr>
+            <td><button class="num" onclick="inputNum(3)">4</button></td>
+            <td><button class="num" onclick="inputNum(4)">5</button></td>
+            <td><button class="num" onclick="inputNum(5)">6</button></td>
+        </tr>
+        <tr>
+            <td><button class="num" onclick="inputNum(6)">7</button></td>
+            <td><button class="num" onclick="inputNum(7)">8</button></td>
+            <td><button class="num" onclick="inputNum(8)">9</button></td>
+        </tr>
+        <tr>
+            <td><button class="sign" onclick="inputSign(0)">+</button></td>
+            <td><button class="num" onclick="inputNum(9)">0</button></td>
+            <td><button class="sign" onclick="inputSign(1)">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="sign" onclick="inputSign(2)">*</button></td>
+            <td><button class="sign" onclick="inputSign(3)">/</button></td>
+            <td><button onclick="assign()">=</button></td>
+        </tr>
+    </table>
+    <input type="text" id="String"><br>
+</body>
+<script>
+    var a = document.getElementsByClassName('num');
+    var b = document.getElementsByClassName('sign');
+    var c = '';
+    var d = '';
+    var e = '';
+    var f = 0;
+    function inputNum(i) {
+        a = document.getElementsByClassName('num')[i].innerHTML
+        document.getElementById('String').value += a;
+        c += a;
+    }
+    function inputSign(i) {
+        b = document.getElementsByClassName('sign')[i].innerHTML
+        document.getElementById('String').value += b;
+        c += b;
+    }
+    function assign() {
+        for (var i = 0; i < c.length; i++) {
+            if (c.charAt(i) != '+' && c.charAt(i) != '-' && c.charAt(i) != '*' && c.charAt(i) != '/') {
+                d += c.charAt(i);
+            } else if (c.charAt(i) == '+') {
+                e = '+';
+            } else if (c.charAt(i) == '-') {
+                f e.charAt(0) d;
+                e = '-';
+            } else if (c.charAt(i) == '*') {
+                e = '*';
+            } else if (c.charAt(i) == '/') {
+                e = '/';
+            } else if (c.charAt(i) == '') {
+
+            }
+        }
+        alert(d);
+    }
+</script>
+</html>
