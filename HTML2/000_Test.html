@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>내이버 : 로그인</title>
 </head>
 <style>
     body {
-        background-image: url(./img/login.png);
+        background-image: url(./img/main/login.png);
     }
     #ID {
         margin-left: 435px;
@@ -35,19 +35,19 @@
     }
 </style>
 <script>
-    let ID = null;
-    let PWD = null;
-    if ()
+    function login() {
+        var a = document.getElementById('ID').value;
+        var b = document.getElementById('PWD').value;
+        alert('ID : '+a+' / PWD : '+b+' 유출되었습니다. ')
+    }
 </script>
 <body>
-    <form action=https://www.naver.com>
-        <div>
-            <input id="ID" type="text" placeholder="아이디 또는 전화번호" style="font-size: 15px;">
-        </div>
-        <div>
-            <input id="PWD" type="password" placeholder="비밀번호" style="font-size: 15px;">
-        </div>
-        <button id="Login"><img src="./img/loginbutton.png" alt=""></button>
-    </form>
+    <div>
+        <input id="ID" type="text" placeholder="아이디 또는 전화번호" style="font-size: 15px;">
+    </div>
+    <div>
+        <input id="PWD" type="password" placeholder="비밀번호" style="font-size: 15px;">
+    </div>
+    <button id="Login" onclick="login()"><img src="./img/main/loginbutton.png" alt=""></button>
 </body>
 </html>

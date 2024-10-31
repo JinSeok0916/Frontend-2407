@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <h3>JavaScript 정리 순서</h3>
+    <ul>
+        <li>선언 키워드 : var, let, const</li>
+        <li>연산자 : 비교연산자 중 == 그리고 ===</li>
+        <li></li>
+        <li>자바스크립트에서 html 객체 가져오기</li>
+        <li>객체 동적 컨트롤하기</li>
+    </ul>
+    <form action="goServer" method="get">
+        <input type="text" id="id"><br>
+        <input type="text" id="pwd"><br>
+        <input type="submit" value="전송">
+        <input type="button" value="클릭" onclick="test()">
+    </form>
+</body>
+</html>
+<script>
+    function test() {   // 자바스크립트 함수(메서드) 정의. 정의 시 매개변수는 고려, 리턴값은 정의하지않음
+        var a = document.getElementById('id');
+        var b = document.querySelector('h1');
+        b.innerText = a.value;
+    }
+</script>
