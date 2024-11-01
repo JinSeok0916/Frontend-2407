@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #abcd {
+        width : 600px;
+    }
+</style>
+<script>
+    function sfun(){
+        var cnt = 0;
+        var count = 0;
+        var w = document.getElementById("abc").innerText;  // 본문을 저장할 변수 선언
+        var sw = document.getElementById("sword").value;   // 검색어를 저장할 변수 선언  
+        var switchW = '<Mark>' + sw + '</Mark>'
+        document.getElementById("abc").innerHTML = w;
+        for (let i = 0; i < w.length; i++) {
+            if (w.charAt(i) == sw.charAt(0)) {
+                for (let j = 0; j < sw.length; j++) {
+                    if (w.charAt(j+i) == sw.charAt(j)){
+                        cnt++;
+                        if (cnt == sw.length) {
+                            count++;
+                            document.getElementById("abc").innerHTML = document.getElementById("abc").innerHTML.substring(0,i+(switchW.length*(count-1))-(sw.length*(count-1))) + switchW + document.getElementById("abc").innerHTML.substring(i+switchW.length*(count-1)+(sw.length-sw.length*(count-1)))
+                            i += sw.length-1;
+                        }
+                    }
+                }
+            }
+            cnt = 0
+        }
+        document.getElementById("switch").innerText = count + '개'
+        count = 0;
+    }
+</script>
+
+<body>
+    <div id="abcd">
+        <span id="abc">
+            주말 이틀 연속 코로나19 하루 신규 확진자가 10만명대를 
+            기록하는 등 유행 규모가 감소세를 이어갔다. 
+            정부가 방역·의료체계의 일상회복을 
+            목표로 한 ‘포스트 오미크론 대응체계’를 준비하는 가운데 
+            11일부터는 보건소 선별진료소와 임시선별진료소에서 코로나19 신속항원검사가 중단된다.
+        </span>
+        <br>
+        찾을 문자열 <input type="text" id="sword"> 
+        <input type="button" onclick="sfun()" value="검색">
+        <span id="switch"></span>
+    </div>
+</body> 
+</html>
+
+
+
+<!-- 
+
+과제1 : 검색어가 모두 몇개인지 카운팅하시오
+과제2 : 검색어는 배경을 노락색으로 색칠하세요.
+
+
+-->

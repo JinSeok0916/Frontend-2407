@@ -34,14 +34,15 @@
         </tr>
     </table>
     <input type="text" id="String"><br>
+    <input type="text" id="Result"><br>
+    <button id="cln" onclick="clean()">C</button>
+    <button id="back" onclick="back()">←</button>
 </body>
 <script>
     var a = document.getElementsByClassName('num');
     var b = document.getElementsByClassName('sign');
     var c = '';
-    var d = '';
-    var e = '';
-    var f = 0;
+    var d = 0;
     function inputNum(i) {
         a = document.getElementsByClassName('num')[i].innerHTML
         document.getElementById('String').value += a;
@@ -53,23 +54,19 @@
         c += b;
     }
     function assign() {
-        for (var i = 0; i < c.length; i++) {
-            if (c.charAt(i) != '+' && c.charAt(i) != '-' && c.charAt(i) != '*' && c.charAt(i) != '/') {
-                d += c.charAt(i);
-            } else if (c.charAt(i) == '+') {
-                e = '+';
-            } else if (c.charAt(i) == '-') {
-                f e.charAt(0) d;
-                e = '-';
-            } else if (c.charAt(i) == '*') {
-                e = '*';
-            } else if (c.charAt(i) == '/') {
-                e = '/';
-            } else if (c.charAt(i) == '') {
-
-            }
-        }
-        alert(d);
+        d = eval(c);
+        document.getElementById('Result').value = d;
+    }
+    function clean() {
+        a = '';
+        b = '';
+        c = '';
+        d = 0;
+        document.getElementById('String').value = '';
+        document.getElementById('Result').value = '';
+    }
+    function back() {
+        String(document.getElementById('String').value) -= String(a);
     }
 </script>
 </html>

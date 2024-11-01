@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><button class="num">1</button></td>
+            <td><button class="num">2</button></td>
+            <td><button class="num">3</button></td>
+        </tr>
+        <tr>
+            <td><button class="num">4</button></td>
+            <td><button class="num">5</button></td>
+            <td><button class="num">6</button></td>
+        </tr>
+        <tr>
+            <td><button class="num">7</button></td>
+            <td><button class="num">8</button></td>
+            <td><button class="num">9</button></td>
+        </tr>
+        <tr>
+            <td><button class="sign">+</button></td>
+            <td><button class="num">0</button></td>
+            <td><button class="sign">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="sign">*</button></td>
+            <td><button class="sign">/</button></td>
+            <td><button>=</button></td>
+        </tr>
+    </table>
+    <input type="text" id="String"><br>
+    <input type="text" id="Result"><br>
+    <button id="cln" onclick="clean()">C</button>
+    <button id="back" onclick="back()">←</button>
+</body>
+<script>
+
+    // 이벤트 처리를 위한 리스너 : 이벤트리스너, 마우스리스너 등
+    // 지금 사용해 본 것 : click, change
+    // 마우스 동작 : mouseup, mousedown
+    // 키보드 동작도 있음
+    // 리스너를 등록하는 방법은 크게 2가지가 있다.
+    // 1. html 태그에서 함수를 지정하는 방법
+    // 2. 자바스크립트에서 리스너에 등록하는 방법
+
+    // 이곳은 함수 영역이 아니라 문서가 로딩될 때 여기에 작성한 코드가 실행되는 곳이다.
+    // 함수로 작성한 문서dml 코드는 콜이 될 때 실행된다.
+
+    // 리스너 등록 (람다식 활용)
+    // 람다식 : 함수를 간결하게 표현한 것. 코드를 여러 줄 처리하기 위해 함수로 묶어서 정의하는 경우,
+    //         코드의 재사용성 보다 간단한 기능 정의
+    // 이벤트 등록, 이벤트 처리 시 일반적으로 람다식을 많이 사용한다.
+    // document.getElementsByClassName("num")[0].addEventListener('click',ttt)
+    // document.getElementsByClassName("num")[1].addEventListener('click',() => {alert('tt aaa')})
+    // function ttt() {
+    //     alert('aaa')
+    // }
+    // 계산기에서 모든 버튼은 이벤트에 등록되어야 한다.
+    // html에서 onclick을 하던, 자바스크립트에서 리스너 등록을 하던 해야한다.
+    // 이번 예제는 자바스크립트에서 리스너를 등록한다.
+    var allBtn = document.getElementsByClassName("num");
+    for (let i = 0; i < allBtn.length; i++) {
+        let s = allBtn[i].innerHTML
+        allBtn[i].addEventListener('click',() => {inputNum(s-1)})
+    }
+
+
+
+
+    var a = document.getElementsByClassName('num');
+    var b = document.getElementsByClassName('sign');
+    var c = '';
+    var d = 0;
+    function inputNum(i) {
+        a = document.getElementsByClassName('num')[i].innerHTML
+        document.getElementById('String').value += a;
+        c += a;
+    }
+    function inputSign(i) {
+        b = document.getElementsByClassName('sign')[i].innerHTML
+        document.getElementById('String').value += b;
+        c += b;
+    }
+    function assign() {
+        d = eval(c);
+        document.getElementById('Result').value = d;
+    }
+    function clean() {
+        a = '';
+        b = '';
+        c = '';
+        d = 0;
+        document.getElementById('String').value = '';
+        document.getElementById('Result').value = '';
+    }
+    function back() {
+        String(document.getElementById('String').value) -= String(a);
+    }
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 주문메뉴 </h1>
+    <div id="info"></div>
+    메뉴선택 <input type="text" id="inputMenu">
+    <input type="button" onclick="order()" value="주문">    
+    <br>주문정보 <div id="order_info"></div>
+    <hr>
+</body>
+<script>
+    var menu = ['자장면','볶음밥','탕수육']
+    // node.js로 실행하지 말고, 웹브라우저로 실행하여서 해결하시오.
+
+    // 05answer01.html    
+    // 1. html문서가 로딩 될 때 #info에 menu배열에 정의된 모든 메뉴가 보여진다.
+    // 2. 메뉴선택에 메뉴를 입력하고  주문을 누르면 입력된 메뉴가 실제 존재하는 메뉴가
+    //    아니면 메뉴가 없습니다는 경고창을 띄운다.
+    // 3. 메뉴가 존재하면 confirm() 창을 띄우고 확인을 누르면 
+    //     주문정보에 파란색의 글씨로 선태한 메뉴를 출력한다.
+
+    // 05answer02.html
+    // 1. 위 1번과 2번 동일하다.
+    // 2. 메뉴선택 옆에 수량을 입력하도록 html을 수정 한다.
+    // 3. 주문을 입력하여 메뉴가 존재하면 confirm()을 띄우고, 이때 메뉴와 수량이
+    //    확인되어야 한다. 
+    // 4. 주문정보에 체크박스, 메뉴명, 수량, 삭제버튼이 나오게 한다.
+    // 5. 삭제 버튼을 누르면 주문 삭제가 가능하다.
+    
+</script>
+</html>
