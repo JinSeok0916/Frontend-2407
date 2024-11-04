@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    p,
+    span {
+      margin: 0;
+    }
+
+    a {
+      color: black;
+    }
+
+    img {
+      display: block;
+      width: 80%;
+      height: 80px;
+      margin: auto;
+    }
+
+    .cart {
+      width: 80%;
+      margin: auto;
+      padding: 30px;
+    }
+
+    .cart ul {
+      background-color: whitesmoke;
+      padding: 30px;
+      margin-bottom: 50px;
+      border: whitesmoke solid 1px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .cart ul :first-child {
+      color: #03C75A;
+    }
+
+    table {
+      border-top: solid 1.5px black;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    thead {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    tbody {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    td {
+      padding: 15px 0px;
+      border-bottom: 1px solid lightgrey;
+    }
+
+    .cart__list__detail :nth-child(3) {
+      vertical-align: top;
+    }
+
+    .cart__list__detail :nth-child(3) a {
+      font-size: 12px;
+    }
+
+    .cart__list__detail :nth-child(3) p {
+      margin-top: 6px;
+      font-weight: bold;
+    }
+
+    .cart__list__smartstore {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .cart__list__option {
+      vertical-align: top;
+      padding: 20px;
+    }
+
+    .cart__list__option p {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .cart__list__option p::after {
+      content: "";
+      width: 90%;
+      height: 1px;
+      background-color: lightgrey;
+      left: 0px;
+      top: 25px;
+      position: absolute;
+    }
+
+    .cart__list__optionbtn {
+      background-color: white;
+      font-size: 10px;
+      border: lightgrey solid 1px;
+      padding: 7px;
+    }
+
+    .cart__list__detail :nth-child(4),
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      border-left: 2px solid whitesmoke;
+    }
+
+    .cart__list__detail :nth-child(5),
+    .cart__list__detail :nth-child(6) {
+      text-align: center;
+    }
+
+    .cart__list__detail :nth-child(5) button {
+      background-color: #03C75A;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 8px;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .cart__mainbtns {
+      width: 420px;
+      height: 200px;
+      padding-top: 40px;
+      display: block;
+      margin: auto;
+    }
+
+    .cart__bigorderbtn {
+      width: 200px;
+      height: 50px;
+      font-size: 16px;
+      margin: auto;
+      border-radius: 5px;
+    }
+
+    .cart__bigorderbtn.left {
+      background-color: white;
+      border: 1px lightgray solid;
+    }
+
+    .cart__bigorderbtn.right {
+      background-color: #03C75A;
+      color: white;
+      border: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+      opacity: 1
+    }
+  </style>
+</head>
+
+<body>
+  <section class="cart">
+    <div class="cart__information">
+      <ul>
+        <li>장바구니 상품은 최대 30일간 저장됩니다.</li>
+        <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+        <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
+      </ul>
+    </div>
+    <table class="cart__list">
+      <form>
+        <thead>
+          <tr>
+            <td><input type="checkbox" id="allChk" onchange="allChk1()"></td>
+            <td>상품정보</td>
+            <td>옵션</td>
+            <td>상품금액</td>
+            <td>배송비</td>
+          </tr>
+          <tr id="hidden">
+            <td colspan="5"> 장바구니가 비어있습니다. 물건을 주문해주세요.</td>
+          </tr>
+        </thead>
+        <tbody id="cart__list">
+          
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"><input type="button" class="cart__list__optionbtn"
+                onclick="delRow()" value="선택상품삭제">
+              <button class="cart__list__optionbtn">선택상품 찜</button>
+            </td>
+            <td></td>
+            <td style="text-align: center;"> 선택상품금액   <span id="allGoods"></span> + 총 배송비   <span id="allDlv"></span></td>
+            <td style="text-align: center; color: #03C75A; border-left: 1px lightgray solid;"> 주문금액 <span id="allPri"></span></td>
+          </tr>
+        </tfoot>
+      </form>
+    </table>
+
+    <table class="buyGoods">
+      <form>
+        <thead>
+          <tr>
+            <td>상품정보</td>
+            <td>옵션</td>
+            <td>상품금액</td>
+            <td>배송비</td>
+          </tr>          
+        </thead>
+        <tbody>
+          <tr class="cart__list__detail">
+
+            <td style="width: 40%;"><input type="text" id="goodsInfo" size="40"></td>
+            <td class="cart__list__option" style="width: 27%;">
+              상품 주문 수량<input type="number" id="goodsCnt" min="1" value="1" style="width: 40px;">개
+            </td>
+            <td style="width: 15%;"><span class="price"><input type="text" id="goodsPrice" size="10">원</span>
+            </td>
+            <td style="width: 15%;"><input type="text" id="goodsDlv" size="10"></td>
+          </tr>
+
+        </tbody>
+
+      </form>
+    </table>
+    <div class="cart__mainbtns">
+      <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
+      <button class="cart__bigorderbtn right" onclick="addRow()">주문하기</button>
+    </div>
+</section>
+</body>
+
+<script>
+    let cboxCount = 0
+    let tboxCount = 0
+    // 주문하기
+    function addRow() {
+        // 물건이 추가되면 비어있다는 행 숨기기
+        document.getElementById('hidden').style.display = 'none';
+        
+        let table = document.getElementById('cart__list');
+        let newRow = table.insertRow();
+        let newCell0 = newRow.insertCell(0);
+        let newCell1 = newRow.insertCell(1);
+        let newCell2 = newRow.insertCell(2);
+        let newCell3 = newRow.insertCell(3);
+        let newCell4 = newRow.insertCell(4);
+
+        newCell0.innerHTML = "<input type=\"checkbox\" checked class=\"checkedbox\" onclick=\"checkedboxs()\">"
+        newCell1.innerHTML = document.getElementById('goodsInfo').value;
+        newCell2.innerHTML = "<input type=\"number\" min=\"1\" value=\""+ document.getElementById('goodsCnt').value +"\" style=\"width: 40px;\" onclick=\"changedCnt()\">";
+        newCell3.innerHTML = Number(document.getElementById('goodsPrice').value) * Number(document.getElementById('goodsCnt').value);
+        newCell4.innerHTML = Number(document.getElementById('goodsDlv').value) * Number(document.getElementById('goodsCnt').value);
+
+        alert(newCell2.innerHTML)
+
+        allGoods.innerText = Number(allGoods.innerText) + Number(document.getElementById('goodsPrice').value) * Number(document.getElementById('goodsCnt').value);
+        allDlv.innerText = Number(allDlv.innerText) + Number(document.getElementById('goodsDlv').value) * Number(document.getElementById('goodsCnt').value);
+        allPri.innerText = Number(allGoods.innerText ) + Number(allDlv.innerText )
+        
+        tboxCount++
+
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == true) {
+                cboxCount++
+            } else if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == false){
+                cboxCount--
+            }
+        }
+        if (cboxCount == tboxCount) {
+            document.getElementById('allChk').checked = true;
+        } else {
+            document.getElementById('allChk').checked = false;
+        }
+        
+        cboxCount = 0
+
+        // 초기화
+        document.getElementById('goodsInfo').value = '';
+        document.getElementById('goodsCnt').value = 1;
+        document.getElementById('goodsPrice').value = '';
+        document.getElementById('goodsDlv').value = '';
+    }
+    
+    function delRow() {
+        let cnt = 0;
+        let length = document.getElementById('cart__list').rows.length;
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked) {
+                document.getElementById('cart__list').rows[i].remove();
+                i--;
+                cnt++;
+            }
+        }
+        if (cnt == length) {
+            document.getElementById('hidden').style.display = '';
+        }
+        allGoods.innerText = 0
+        allDlv.innerText = 0
+        allPri.innerText = 0
+        
+        tboxCount--
+    }
+    function checkedboxs() {
+        allGoods.innerText = 0
+        allDlv.innerText = 0
+        allPri.innerText = 0
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == true) {
+                allGoods.innerText = Number(allGoods.innerText) + Number(document.getElementById('cart__list').rows[i].cells[3].innerText)
+                allDlv.innerText = Number(allDlv.innerText) + Number(document.getElementById('cart__list').rows[i].cells[4].innerText)
+                allPri.innerText = Number(allGoods.innerText ) + Number(allDlv.innerText )
+            }
+        }
+        
+        
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == true) {
+                cboxCount++
+            } else if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == false){
+                cboxCount--
+            }
+        }
+        if (cboxCount == tboxCount) {
+            document.getElementById('allChk').checked = true;
+        } else {
+            document.getElementById('allChk').checked = false;
+        }
+
+        cboxCount = 0;
+
+    }
+
+    function allChk1() {
+        if (allChk.checked == true) {
+            for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+                document.getElementById('cart__list').rows[i].cells[0].children[0].checked = true;
+            }
+        } else if (allChk.checked == false) {
+            for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+                document.getElementById('cart__list').rows[i].cells[0].children[0].checked = false;
+            }
+        }
+
+        allGoods.innerText = 0
+        allDlv.innerText = 0
+        allPri.innerText = 0
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            if (document.getElementById('cart__list').rows[i].cells[0].children[0].checked == true) {
+                allGoods.innerText = Number(allGoods.innerText) + Number(document.getElementById('cart__list').rows[i].cells[3].innerText)
+                allDlv.innerText = Number(allDlv.innerText) + Number(document.getElementById('cart__list').rows[i].cells[4].innerText)
+                allPri.innerText = Number(allGoods.innerText ) + Number(allDlv.innerText )
+            }
+        }
+    }
+
+    // 옵션의 value값에 따른 상품금액 변화 및 선택상품금액, 주문금액 변화
+    function changedCnt() {
+        for (let i = 0; i < document.getElementById('cart__list').rows.length; i++) {
+            document.getElementById('cart__list').rows[i].cells[3].innerText = Number(document.getElementById('cart__list').rows[i].cells[3].innerText) * Number(document.getElementById('cart__list').rows[i].cells[2].children[0].value)
+            document.getElementById('cart__list').rows[i].cells[4].innerText = Number(document.getElementById('cart__list').rows[i].cells[4].innerText) * Number(document.getElementById('cart__list').rows[i].cells[2].children[0].value)
+        }
+    }
+</script>
+
+</html> 

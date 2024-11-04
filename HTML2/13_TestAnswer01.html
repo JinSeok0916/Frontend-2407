@@ -18,16 +18,22 @@
     <input type="text" id="inputNum">
     <input type="button" onclick="order()" value="주문">    
     <br>주문정보 <div id="order_info"></div>
+    <button id = deleteBtn>삭제</button>
     <hr>
 </body>
 <script>
     var menu = ['자장면','볶음밥','탕수육']
     
-    window.onload = function intro() {
+    menu.push('군만두')
+    
+    // window.onload = function intro() {
         for (let i = 0; i < menu.length; i++) {
             document.getElementById('info').innerText += menu[i] + "\u00a0";
         }
-    }
+        // for (i of menu) {
+        //     document.getElementById('info').innerText += i + "\u00a0";
+        // }
+    // }
 
     function order() {
         let cnt = 0;
@@ -40,12 +46,22 @@
         if (cnt == 0) {
             alert('메뉴가 없습니다.')
         } else if (cnt != 0) {
-            confirm()
-            document.getElementById('order_info').innerText = menu[cnt-1]
+            if(confirm('주문하시겠습니까?')) {
+                document.getElementById('order_info').innerHTML += '<div id="'+cnt+'"><input type="checkbox" id=""><span>' + menu[cnt-1] + ' ' +  document.getElementById('inputNum').value + '개</span></div>'
+            } else {
+                alert('취소되었습니다.')
+            }
         }
         cnt = 0;
+        document.getElementById('inputMenu').value = ''
+        document.getElementById('inputNum').value = ''
     }
 
+    document.getElementById(deleteBtn).addEventListener('click',()=>{
+        if (true) {
+            document.getElementById(i).remove();
+        }
+    })
 
     // node.js로 실행하지 말고, 웹브라우저로 실행하여서 해결하시오.
 
